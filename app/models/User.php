@@ -41,4 +41,32 @@ class User {
     public function isAdmin() {
         return isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
     }
+
+ public function existsByUsername($username) {
+        $sql = "SELECT id FROM users WHERE username = :username";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute(['username' => $username]);
+        return $stmt->fetch() !== false;
+    }
+
+    public function existsByEmail($email) {
+        $sql = "SELECT id FROM users WHERE email = :email";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute(['email' => $email]);
+        return $stmt->fetch() !== false;
+    }
+
+    public function register($username, $email, $password) {
+        $sql = "INSERT INTO users (username, email, password_hash, role)
+                VALUES (:username, :email, :password_hash, 'user')";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([
+            'username'      => $username,
+            'email'         => $email,
+            'password_hash' => password_hash($password, PASSWORD_BCRYPT)
+        ]);
+
+        return $this->db->lastInsertId();
+    }
 }

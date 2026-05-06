@@ -82,7 +82,7 @@ h2 {
     margin-bottom: 12px;
 }
 
-/* === Articles === */
+
 .articles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -119,7 +119,7 @@ h2 {
     text-decoration: underline;
 }
 
-/* === Forms === */
+
 form {
     background: white;
     padding: 30px;
@@ -173,7 +173,6 @@ button:hover {
     background: #1f4530;
 }
 
-/* === Tables === */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -205,7 +204,7 @@ table tr:hover {
     background: #f9faf9;
 }
 
-/* === Buttons in tables === */
+
 table form {
     background: none;
     padding: 0;
@@ -258,4 +257,78 @@ footer {
     h1 {
         font-size: 1.8rem;
     }
+}
+.auth-box {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.auth-box h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2d5f3f;
+}
+
+.auth-box form {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+
+.auth-box label {
+    display: block;
+    margin-bottom: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+.auth-box input {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.auth-box input:focus {
+    outline: none;
+    border-color: #2d5f3f;
+}
+
+.auth-box button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.auth-box p {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.auth-box p a {
+    color: #2d5f3f;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-box p a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    background: #fee;
+    color: #c0392b;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border-left: 4px solid #c0392b;
+    margin-bottom: 15px;
 }
