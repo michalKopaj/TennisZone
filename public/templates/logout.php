@@ -1,9 +1,9 @@
 <?php
 session_start();
-require '../../app/models/User.php';
+require '../../app/core/Auth.php';
 require '../../app/core/Redirect.php';
 
-$user = new User();
+$auth = new Auth();
 $user->logout();
 
 $redirect = new Redirect('home.php');
