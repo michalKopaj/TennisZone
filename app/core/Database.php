@@ -2,10 +2,10 @@
 
 class Database {
     private $host = 'localhost';
-    private $dbname = 'tenniszone';
+    private $dbname = 'tenniszone1';
     private $username = 'root';
     private $password = '';
-    private $connection;
+    private PDO $connection;
 
     public function __construct() {
         try {
