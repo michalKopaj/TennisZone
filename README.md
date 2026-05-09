@@ -1,6 +1,6 @@
 # TennisZone
 
-Tenisová stránka s CRUD operáciami v PHP a MariaDB.
+TennisZone je dynamická webová stránka venovaná tenisu, 
 
 ## Technológie
 - PHP 8.0+ (OOP, PDO)
