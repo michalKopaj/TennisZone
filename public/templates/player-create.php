@@ -12,8 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'name'       => trim($_POST['name'] ?? ''),
         'country'    => trim($_POST['country'] ?? ''),
         'ranking'    => $_POST['ranking'] !== '' ? (int) $_POST['ranking'] : null,
+        'career_high'=> $_POST['ranking'] !== '' ? (int) $_POST['ranking'] : null,
         'birth_date' => $_POST['birth_date'] ?: null,
-        'bio'        => trim($_POST['bio'] ?? '')
+        'bio'        => trim($_POST['bio'] ?? ''),
+        'image'=> $_POST['ranking'] !== '' ? (int) $_POST['ranking'] : null,
+
     ];
 
     if (strlen($data['name']) < 3) {

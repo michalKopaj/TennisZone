@@ -69,4 +69,5 @@ class User {
 
         return $this->db->lastInsertId();
     }
+
 }

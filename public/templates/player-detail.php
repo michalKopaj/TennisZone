@@ -58,23 +58,23 @@ foreach (explode(' ', $player->name) as $part) {
             <div class="stat-label">Aktuálny rebríček</div>
         </div>
         <div class="tennis-stat">
-            <div class="stat-value">#-</div>
+            <div class="stat-value"><?php echo htmlspecialchars($player->career_high ?? '-'); ?></div>
             <div class="stat-label">Career High</div>
         </div>
         <div class="tennis-stat">
-            <div class="stat-value">0</div>
+            <div class="stat-value"><?php echo htmlspecialchars($player->titles ?? '-'); ?></div>
             <div class="stat-label">Tituly</div>
         </div>
         <div class="tennis-stat">
-            <div class="stat-value">0 USD</div>
+            <div class="stat-value"><?php echo htmlspecialchars($player->prize_money ?? '-'); ?></div>
             <div class="stat-label">Prize money</div>
         </div>
         <div class="tennis-stat">
-            <div class="stat-value">0</div>
+            <div class="stat-value"><?php echo htmlspecialchars($player->matches_played ?? '-'); ?></div>
             <div class="stat-label">Odohrané zápasy</div>
         </div>
         <div class="tennis-stat">
-            <div class="stat-value">0%</div>
+            <div class="stat-value"><?php echo htmlspecialchars($player->matches_won ?? '-'); ?></div>
             <div class="stat-label">Úspešnosť</div>
         </div>
     </div>
