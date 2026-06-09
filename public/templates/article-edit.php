@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
         $post->update($id, $data);
-        $redirect = new Redirect('admin-players.php');
+        $redirect = new Redirect('admin-articles.php');
        $redirect->redirect();
     }
 }

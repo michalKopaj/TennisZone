@@ -1,3 +1,3 @@
 <?php
-header('Location: /sj/public/templates/home.php');
+header('Location: /sj1/public/templates/home.php');
 exit;
