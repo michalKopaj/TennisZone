@@ -6,6 +6,13 @@ require_once __DIR__ . '/../../app/models/Player.php';
 
 $player = new Player();
 $errors = [];
+$uploadDir = __DIR__.'/../assets/images/players/';
+$uploadUrl = 'images/players/';
+if(!is_dir($uploadDir)){
+    mkdir($uploadDir,0755,true);
+
+
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = [
@@ -15,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'career_high'=> $_POST['ranking'] !== '' ? (int) $_POST['ranking'] : null,
         'birth_date' => $_POST['birth_date'] ?: null,
         'bio'        => trim($_POST['bio'] ?? ''),
-        'image'=> $_POST['ranking'] !== '' ? (int) $_POST['ranking'] : null,
+        'image'      => null,
 
     ];
 
@@ -26,9 +33,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (strlen($data['country']) < 2) {
         $errors[] = 'Krajina musí mať aspoň 2 znaky.';
     }
+    $hasUpload = isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK;
+    $allowed   = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'];
+    $imageExt  = null;
+
+    if ($hasUpload) {
+        $mime = mime_content_type($_FILES['image']['tmp_name']); 
+        if (!isset($allowed[$mime])) {
+            $errors[] = 'Povolené sú len obrázky JPG, PNG alebo WEBP.';
+        } elseif ($_FILES['image']['size'] > 2 * 1024 * 1024) {
+            $errors[] = 'Obrázok môže mať najviac 2 MB.';
+        } else {
+            $imageExt = $allowed[$mime];
+        }
+    }
+
 
     if (empty($errors)) {
-        $player->create($data);
+        if ($hasUpload && $imageExt) {
+            $filename = uniqid('player_', true) . '.' . $imageExt; 
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadDir . $filename)) {
+                $data['image'] = $filename;
+            }
+        }
+       $player->create($data);
        $redirect = new Redirect('admin-players.php');
        $redirect->redirect();
     }
@@ -70,7 +98,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         Biografia
         <textarea name="bio" rows="6"><?php echo htmlspecialchars($_POST['bio'] ?? ''); ?></textarea>
     </label>
-
+    <label>
+        Fotka hráča
+        <input type="file" name="image" accept="image/jpeg,image/png,image/webp">
+    </label>
     <div>
         <a href="admin-players.php">Zrušiť</a>
         <button type="submit">Vytvoriť</button>

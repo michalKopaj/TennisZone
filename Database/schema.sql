@@ -1,6 +1,6 @@
 
-CREATE DATABASE IF NOT EXISTS tenniszone CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE tenniszone;
+CREATE DATABASE IF NOT EXISTS tenniszone1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE tenniszone1;
 
 
 CREATE TABLE IF NOT EXISTS users (
@@ -84,9 +84,9 @@ CREATE TABLE IF NOT EXISTS contacts (
 
 
 
--- hesla: admin123 (hash cez password_hash)
+	-- hesla: admin123 (hash cez password_hash)
 INSERT INTO users (username, email, password_hash, role) VALUES
-('admin',   'admin@tenniszone.sk',   '$2y$12$GZTnHiFuAixK1FrXMPPva.WIXJDayFK8Ixm/X0.I8dW4yQXZxVOxK', 'admin'),
+('admin', 'admin@tenniszone.sk', '$2y$12$e0NR4M9gL8W0xY3hJ8e6t.P5r2d0R8YxJx7m8Q1P4Jr2g8h2z6D8K', 'admin'),
 ('fanusik', 'fanusik@tenniszone.sk', '$2y$12$GZTnHiFuAixK1FrXMPPva.WIXJDayFK8Ixm/X0.I8dW4yQXZxVOxK', 'user');
 
 INSERT INTO categories (name, slug, description) VALUES

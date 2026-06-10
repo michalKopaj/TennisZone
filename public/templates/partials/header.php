@@ -14,7 +14,7 @@ $user = new User();
 <head>
     <meta charset="UTF-8">
     <title><?php echo Helper::getPageTitle(); ?></title>
-    <link rel="stylesheet" href="/sj1/public/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 

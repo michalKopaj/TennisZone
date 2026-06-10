@@ -31,9 +31,8 @@ foreach (explode(' ', $player->name) as $part) {
     <div class="player-header">
         <div class="player-avatar">
             <?php if (!empty($player->image)): ?>
-                <img src="<?php echo htmlspecialchars($player->image); ?>" alt="<?php echo htmlspecialchars($player->name); ?>">
-            <?php else: ?>
-                <span class="avatar-initials"><?php echo htmlspecialchars($initials); ?></span>
+                <img src="../assets/images/players/<?php echo htmlspecialchars($player->image); ?>"
+                     alt="<?php echo htmlspecialchars($player->name); ?>">
             <?php endif; ?>
         </div>
 
