@@ -1,17 +1,13 @@
-<?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+<?php require_once __DIR__ . '/../../autoload.php';
+use App\Models\Tournament;
+use App\Models\Player;
+use App\Models\Post;
+use App\Models\Category;
+use App\Models\Comment;
 ?>
-
 <?php include __DIR__ . '/partials/header-admin.php'; ?>
 
 <?php
-require_once __DIR__ . '/../../app/models/Post.php';
-require_once __DIR__ . '/../../app/models/Player.php';
-require_once __DIR__ . '/../../app/models/Tournament.php';
-require_once __DIR__ . '/../../app/models/Category.php';
-require_once __DIR__ . '/../../app/models/Comment.php';
-
 $post = new Post();
 $player = new Player();
 $tournament = new Tournament();

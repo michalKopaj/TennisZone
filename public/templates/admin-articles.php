@@ -1,8 +1,8 @@
+<?php require_once __DIR__ . '/../../autoload.php' ;
+use App\Models\Post;?>
+
 <?php include __DIR__ . '/partials/header-admin.php'; ?>
-
 <?php
-require_once __DIR__ . '/../../app/models/Post.php';
-
 $post = new Post();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete') {

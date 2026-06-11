@@ -1,9 +1,8 @@
-<?php include __DIR__ . '/partials/header-admin.php'; ?>
-
-<?php
-require_once __DIR__ . '/../../app/core/Redirect.php';
-require_once __DIR__ . '/../../app/models/Tournament.php';
-
+<?php require_once __DIR__ . '/../../autoload.php' ;
+use App\Core\Redirect;
+use App\Models\Tournament;
+?>
+<?php include __DIR__ . '/partials/header-admin.php'; 
 $id = (int) ($_GET['id'] ?? 0);
 
 $tournament = new Tournament();

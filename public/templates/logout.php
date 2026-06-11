@@ -1,7 +1,10 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+require_once  __DIR__ . '/../../autoload/php';
+
+use App\Core\Auth;
+use App\Core\Redirect;
+?>
+<?php
 
 if(session_status() ===  PHP_SESSION_NONE){
     session_start();

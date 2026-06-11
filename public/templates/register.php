@@ -1,15 +1,15 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+<?php require_once __DIR__ .'/../../autoload.php';
 
+use App\Models\User;
+use App\Core\Auth;
+use App\Core\Redirect;
+?>
+<?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once __DIR__ . '/../../app/core/Auth.php';
-require_once __DIR__ . '/../../app/core/Redirect.php';
-require_once __DIR__ . '/../../app/models/User.php';
+
 
 if (Auth::isLoggedIn()) {
     $redirect = new Redirect('home.php');

@@ -3,7 +3,7 @@
 use App\Models\Player;
 use App\Core\Redirect;
 ?>
- <?php include __DIR__ . '/partials/header-admin.php'; ?>
+
 <?php include __DIR__ . '/partials/header-admin.php'; 
 
 

@@ -1,9 +1,13 @@
 <?php
-session_start();
+require_once __DIR__ . '/../../autoload.php';
 
-require_once __DIR__ . '/../../app/models/Post.php';
-require_once __DIR__ . '/../../app/models/Comment.php';
-require_once __DIR__ . '/../../app/models/User.php';
+use App\Models\Post;
+use App\Models\Comment;
+use App\Models\User;
+use App\Core\Database;
+?>
+<?php
+session_start();
 
 $id = (int) ($_GET['id'] ?? 0);
 

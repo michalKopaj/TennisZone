@@ -1,9 +1,10 @@
-<?php include __DIR__ . '/partials/header.php'; ?>
-
-<?php
-require_once __DIR__ . '/../../app/models/Tournament.php';
+<?php include __DIR__ . '/partials/header.php'; 
 
 
+use App\Models\Tournament;
+
+?>
+<?php include __DIR__ . '/partials/header.php'; 
 $tournament = new Tournament();
 $tournaments = $tournament->all();
 ?>

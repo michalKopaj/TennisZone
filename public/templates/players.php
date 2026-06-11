@@ -1,10 +1,11 @@
-<?php
+<?php require_once __DIR__ . '/../../autoload.php';
 
-include __DIR__ . '/partials/header.php'; ?>
 
-<?php
-require_once __DIR__ . '/../../app/models/Player.php';
 
+
+
+use App\Core\Player; ?>
+<?php include __DIR__ . '/partials/header.php';?>
 $player = new Player();
 $players = $player->all();
 

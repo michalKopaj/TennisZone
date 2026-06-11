@@ -1,8 +1,9 @@
+ <?php require_once __DIR__ . '/../../autoload.php';
+
+
+use App\Models\Player;
+?>
 <?php include __DIR__ . '/partials/header-admin.php'; ?>
-
-<?php
-require_once __DIR__ . '/../../app/models/Player.php';
-
 $player = new Player();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete') {

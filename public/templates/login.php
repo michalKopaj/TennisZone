@@ -1,7 +1,12 @@
 <?php
+require_once __DIR__ . '/../../autoload.php';
+ 
+use App\Models\User;
+use App\Core\Redirect;
+?>
+
+<?php
 session_start();
-require '../../app/models/User.php';
-require '../../app/core/Redirect.php';
 
 $user = new User();
 $error = '';

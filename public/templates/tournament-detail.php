@@ -1,7 +1,9 @@
+<?php require_once __DIR__ . '/../../autoload.php'; 
+use App\Models\Tournament;
+?>
+
 <?php
 include __DIR__ . '/partials/header.php';
-
-require_once __DIR__ . '/../../app/models/Tournament.php';
 
 $id = (int) ($_GET['id'] ?? 0);
 $tournamentObj = new Tournament();

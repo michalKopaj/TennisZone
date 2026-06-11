@@ -1,9 +1,12 @@
+<?php require_once __DIR__ . '/../../autoload.php'; 
+
+use App\Models\Post;
+use App\Models\Category;
+
+?>
+
 <?php include __DIR__ . '/partials/header-admin.php'; ?>
-
 <?php
-require_once __DIR__ . '/../../app/models/Post.php';
-require_once __DIR__ . '/../../app/models/Category.php';
-
 $post = new Post();
 $category = new Category();
 $errors = [];
