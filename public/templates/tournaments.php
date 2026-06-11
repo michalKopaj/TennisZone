@@ -4,7 +4,7 @@
 use App\Models\Tournament;
 
 ?>
-<?php include __DIR__ . '/partials/header.php'; 
+<?php
 $tournament = new Tournament();
 $tournaments = $tournament->all();
 ?>

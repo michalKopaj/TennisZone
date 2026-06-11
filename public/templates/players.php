@@ -1,16 +1,11 @@
 <?php require_once __DIR__ . '/../../autoload.php';
 
-
-
-
-
-use App\Core\Player; ?>
+use App\Models\Player; ?>
 <?php include __DIR__ . '/partials/header.php';?>
+<?php
 $player = new Player();
 $players = $player->all();
-
 ?>
-
 <h1>Hráči</h1>
 <p>Ranking Hracov</p>
 

@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message = 'Komentár musí mať aspoň 3 znaky.';
     } else {
        
-        require_once __DIR__ . '/../../app/core/Database.php';
+        
         $database = new Database();
         $db = $database->getConnection();
 
