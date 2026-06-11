@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/partials/autoload.php';
+<?php include __DIR__ . '/../../autoload.php';
 
 use App\Models\Player;
 ?>
