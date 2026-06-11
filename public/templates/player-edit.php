@@ -1,9 +1,9 @@
-<?php include __DIR__ . '/partials/header-admin.php'; ?>
+<?php include __DIR__ . '/../../autoload.php'; ?>
 
 <?php
-require_once __DIR__ . '/../../app/core/Redirect.php';
-require_once __DIR__ . '/../../app/models/Player.php';
-
+use App\Core\Redirect;
+use App\Models\Player; ?>
+<?php include __DIR__ . '/partials/header-admin.php'; 
 $id = (int) ($_GET['id'] ?? 0);
 
 $player = new Player();
@@ -22,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'country'    => trim($_POST['country'] ?? ''),
         'ranking'    => $_POST['ranking'] !== '' ? (int) $_POST['ranking'] : null,
         'birth_date' => $_POST['birth_date'] ?: null,
-        'bio'        => trim($_POST['bio'] ?? '')
+        'bio'        => trim($_POST['bio'] ?? ''),
+        'image'      => null
     ];
 
     if (strlen($data['name']) < 3) {
@@ -33,6 +34,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Krajina musí mať aspoň 2 znaky.';
     }
 
+    if (isset($_FILES['image'])&& $_FILES['image']['error'] === UPLOAD_ERR_OK){
+         $fileTmpPath= $_FILES['image']['tmp_name'];
+         $fileName = $_FILES['image']['name'];
+         $fileSize = $_FILES['image']['size'];
+         $fileType= $_FILES['image']['type'];
+         $fileNameCmps= explode(".",$fileName);
+         $fileExtension = strtolower(end($fileNameCmps));
+
+
+         $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+
+    }
     if (empty($errors)) {
         $player->update($id, $data);
         $redirect = new Redirect('admin-players.php');

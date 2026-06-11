@@ -1,7 +1,6 @@
 <?php
 
-require_once __DIR__ . '/Database.php';
-require_once __DIR__ . '/Redirect.php';
+namespace App\Core;
 
 class Auth {
 

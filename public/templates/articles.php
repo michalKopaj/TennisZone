@@ -1,8 +1,9 @@
-<?php include __DIR__ . '/partials/header.php'; ?>
+<?php 
+require_once __DIR__ . '/../../autoload.php'; ?>
 
 <?php
-require_once __DIR__ . '/../../app/models/Post.php';
-
+use App\Models\Post; ?>
+<?php include __DIR__ . '/partials/header.php'; 
 $post = new Post();
 $articles = $post->all();
 ?>

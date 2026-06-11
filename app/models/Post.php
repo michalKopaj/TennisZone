@@ -1,6 +1,8 @@
 <?php
 
-require_once __DIR__ . '/../core/Database.php';
+namespace App\Models;
+
+use App\Core\Database;
 
 class Post {
 

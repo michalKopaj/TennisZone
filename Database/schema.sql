@@ -95,13 +95,12 @@ INSERT INTO categories (name, slug, description) VALUES
 ('Grand Slam',  'grand-slam',  'Štyri najprestížnejšie turnaje sezóny'),
 ('Davis Cup',   'davis-cup',   'Tímová súťaž národných reprezentácií');
 
-
-INSERT INTO players (name, country, ranking, birth_date, bio) VALUES
-('Carlos Alcaraz',  'Španielsko',  1, '2003-05-05', 'Mladý španielsky talent, držiteľ viacerých Grand Slam titulov.'),
-('Jannik Sinner',   'Taliansko',   2, '2001-08-16', 'Taliansky tenista, jedna z najväčších hviezd súčasnosti.'),
-('Novak Djokovic',  'Srbsko',      3, '1987-05-22', 'Srbský šampión, držiteľ rekordného počtu Grand Slam titulov.'),
-('Iga Swiatek',     'Poľsko',      1, '2001-05-31', 'Poľská hráčka, jednotka WTA rebríčka.'),
-('Aryna Sabalenka', 'Bielorusko',  2, '1998-05-05', 'Útočná hráčka z Bieloruska, viacnásobná víťazka Grand Slam.');
+INSERT INTO players (name, country, ranking, birth_date, bio, image) VALUES
+('Carlos Alcaraz',  'Španielsko',  1, '2003-05-05', 'Mladý španielsky talent, držiteľ viacerých Grand Slam titulov.', 'alcaraz.jpg'),
+('Jannik Sinner',   'Taliansko',   2, '2001-08-16', 'Taliansky tenista, jedna z najväčších hviezd súčasnosti.', 'sinner.jpg'),
+('Novak Djokovic',  'Srbsko',      3, '1987-05-22', 'Srbský šampión, držiteľ rekordného počtu Grand Slam titulov.', 'djokovic.jpg'),
+('Iga Swiatek',     'Poľsko',      1, '2001-05-31', 'Poľská hráčka, jednotka WTA rebríčka.', NULL),
+('Aryna Sabalenka', 'Bielorusko',  2, '1998-05-05', 'Útočná hráčka z Bieloruska, viacnásobná víťazka Grand Slam.', 'sabalenka.jpg');
 
 
 INSERT INTO tournaments (name, location, surface, start_date, end_date, prize_money, description) VALUES

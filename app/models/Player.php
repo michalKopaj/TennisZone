@@ -1,7 +1,8 @@
 <?php
 
-require_once __DIR__ . '/../core/Database.php';
+namespace App\Models;
 
+use App\Core\Database;
 class Player {
 
     private $db;
@@ -31,7 +32,7 @@ class Player {
     }
 public function create($data) {
         $sql = "INSERT INTO players (name, country, ranking, birth_date, bio)
-                VALUES (:name, :country, :ranking, :birth_date, :bio)";
+                VALUES (:name, :country, :ranking, :birth_date, :bio, :image)";
 
         $stmt = $this->db->prepare($sql);
         $stmt->execute([
@@ -39,7 +40,8 @@ public function create($data) {
             'country'    => $data['country'],
             'ranking'    => $data['ranking'] ?? null,
             'birth_date' => $data['birth_date'] ?? null,
-            'bio'        => $data['bio'] ?? ''
+            'bio'        => $data['bio'] ?? '',
+            'image'      => $data['image'] ?? null,
         ]);
 
         return $this->db->lastInsertId();
@@ -51,7 +53,8 @@ public function create($data) {
                     country = :country,
                     ranking = :ranking,
                     birth_date = :birth_date,
-                    bio = :bio
+                    bio = :bio,
+                    image = :image
                 WHERE id = :id";
 
         $stmt = $this->db->prepare($sql);
@@ -61,7 +64,8 @@ public function create($data) {
             'country'    => $data['country'],
             'ranking'    => $data['ranking'] ?? null,
             'birth_date' => $data['birth_date'] ?? null,
-            'bio'        => $data['bio'] ?? ''
+            'bio'        => $data['bio'] ?? '',
+            'image'      => $data['image'] ?? null,
         ]);
     }
 }

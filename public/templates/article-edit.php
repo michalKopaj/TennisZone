@@ -1,10 +1,12 @@
-<?php include __DIR__ . '/partials/header-admin.php'; ?>
+<?php 
+require_once __DIR__ . '/../../autoload.php'; ?>
 
 <?php
-require_once __DIR__ . '/../../app/core/Redirect.php';
-require_once __DIR__ . '/../../app/models/Post.php';
-require_once __DIR__ . '/../../app/models/Category.php';
-
+use App\Core\Redirect;
+use App\Models\Post;
+use App\Models\Category;
+?>
+<?php include __DIR__ . '/partials/header-admin.php'; 
 $id = (int) ($_GET['id'] ?? 0);
 
 $post = new Post();

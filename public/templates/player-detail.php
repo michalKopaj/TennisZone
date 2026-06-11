@@ -1,8 +1,8 @@
-<?php
-include __DIR__ . '/partials/header.php';
+<?php include __DIR__ . '/partials/autoload.php';
 
-require_once __DIR__ . '/../../app/models/Player.php';
-
+use App\Models\Player;
+?>
+<?php include __DIR__ . '/partials/header.php'; 
 $id = (int) ($_GET['id'] ?? 0);
 $playerObj = new Player();
 $player = $playerObj->find($id);

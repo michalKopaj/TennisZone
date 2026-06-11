@@ -1,8 +1,11 @@
-<?php include __DIR__ . '/partials/header-admin.php'; ?>
+<?php include __DIR__ . '/../../autoload.php'; 
 
-<?php
-require_once __DIR__ . '/../../app/core/Redirect.php';
-require_once __DIR__ . '/../../app/models/Player.php';
+use App\Models\Player;
+use App\Core\Redirect;
+?>
+ <?php include __DIR__ . '/partials/header-admin.php'; ?>
+<?php include __DIR__ . '/partials/header-admin.php'; 
+
 
 $player = new Player();
 $errors = [];
@@ -22,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'career_high'=> $_POST['ranking'] !== '' ? (int) $_POST['ranking'] : null,
         'birth_date' => $_POST['birth_date'] ?: null,
         'bio'        => trim($_POST['bio'] ?? ''),
-        'image'      => null,
+        'image'      =>  null,
 
     ];
 
@@ -103,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="file" name="image" accept="image/jpeg,image/png,image/webp">
     </label>
     <div>
-        <a href="admin-players.php">Zrušiť</a>
+        <a href="admin-players.php">Zrušiť</a>  
         <button type="submit">Vytvoriť</button>
     </div>
 </form>
