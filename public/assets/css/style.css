@@ -661,3 +661,17 @@ footer {
     object-fit: cover;
     object-position: top;   
 }
+.category-filter {
+    max-width: 260px;
+    margin: 0 0 20px auto;   
+    padding: 16px 20px;
+}
+
+.category-filter label {
+    margin-bottom: 8px;
+}
+
+.category-filter select {
+    font-size: 14px;
+    padding: 8px 10px;
+}

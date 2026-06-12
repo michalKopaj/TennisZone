@@ -18,6 +18,12 @@ class Post {
         $stmt = $this->db->query($sql);
         return $stmt->fetchAll();
     }
+    public function byCategory($categoryId) {
+    $sql = "SELECT * FROM articles WHERE category_id = :category_id ORDER BY created_at DESC";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute(['category_id' => $categoryId]);
+    return $stmt->fetchAll();
+    }   
 
     public function find($id) {
         $sql = "SELECT * FROM articles WHERE id = :id";
@@ -79,3 +85,4 @@ public function create($data) {
         return $slug;
     }
 }
+

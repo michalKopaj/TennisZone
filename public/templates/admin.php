@@ -46,6 +46,7 @@ $comments = $comment->all();
     <div class="stat-card">
         <h3>Kategórie</h3>
         <p class="stat-number"><?php echo count($categories); ?></p>
+        <a href="admin-categories.php">Spravovať</a>
     </div>
 
     <div class="stat-card">

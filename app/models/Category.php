@@ -20,6 +20,21 @@ class Category {
         return $stmt->fetchAll();
     }
 
+    public function create($name) {
+    $sql = "INSERT INTO categories (name, slug) VALUES (:name, :slug)";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute([
+        'name' => $name,
+        'slug' => $this->generateSlug($name)
+    ]);
+}
+
+private function generateSlug($name) {
+    $slug = strtolower($name);
+    $slug = preg_replace('/[^a-z0-9]+/', '-', $slug);
+    $slug = trim($slug, '-');
+    return $slug;
+}
   
     public function delete($id) {
         $sql = "DELETE FROM categories WHERE id = :id";
