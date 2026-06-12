@@ -2,7 +2,7 @@
 return [
     'app' => [
         'name'      => 'TennisZone',
-        'base_path' => '/TennisZone-main',
+        'base_path' => '/TennisZone',
         'debug'     => true,
         'timezone'  => 'Europe/Bratislava',
     ],
