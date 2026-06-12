@@ -31,7 +31,7 @@ class Player {
         $stmt->execute(['id' => $id]);
     }
 public function create($data) {
-        $sql = "INSERT INTO players (name, country, ranking, birth_date, bio)
+        $sql = "INSERT INTO players (name, country, ranking, birth_date, bio, image)
                 VALUES (:name, :country, :ranking, :birth_date, :bio, :image)";
 
         $stmt = $this->db->prepare($sql);
