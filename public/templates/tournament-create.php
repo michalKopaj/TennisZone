@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
         $tournament->create($data);
-         $redirect = new Redirect('admin-players.php');
+         $redirect = new Redirect('admin-tournaments.php');
        $redirect->redirect();
     }
 }
